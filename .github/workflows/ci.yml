@@ -3,6 +3,7 @@ name: CI
 on:
   push:
     branches: [main]
+  workflow_dispatch:
   pull_request:
 
 permissions:
@@ -49,3 +50,8 @@ jobs:
           size=$(stat -c %s launcher/app/build/outputs/apk/release/app-release.apk)
           echo "release APK: $((size / 1024)) KB"
           test "$size" -lt 430080 || { echo "APK is over 420 KB; the launcher targets 1 GB TVs, keep it small"; exit 1; }
+      - name: Upload Launcher APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: CleanYourTV-Launcher
+          path: launcher/app/build/outputs/apk/release/app-release.apk

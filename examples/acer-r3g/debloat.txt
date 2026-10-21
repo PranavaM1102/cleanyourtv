@@ -1,0 +1,37 @@
+# Acer TV R3G (device R3_GTV, manufacturer MOKA / Realtek)
+# Android TV 14 (SDK 34), build UKR1.260612
+#
+# Apply:   tools\disable.ps1 examples\acer-r3g\debloat.txt -TvHost 192.168.1.4
+# Undo:    tools\restore.ps1 examples\acer-r3g\debloat.txt -TvHost 192.168.1.4
+# Everything is DISABLED for user 0, not uninstalled.
+
+# MOKA / SCBC OEM bloatware & telemetry
+com.apps.esticker
+com.apps.esticker3
+com.apps.tvmanager
+com.apps.biz.ds
+com.apps.biz.mt
+com.apps.function.gdpr
+com.apps.mk.wd
+com.apps.factory.ui
+com.apps.scast
+com.creative.fastscreen.tv
+com.seraphic.hbbtv.app
+com.seraphic.webview
+com.realtek.leanbacklauncher.partnercustomizer
+com.realtek.display.monitor
+com.realtek.factorytools
+
+# Google TV ad services, telemetry, and store recommendations
+com.android.adservices.api
+com.android.federatedcompute.services
+com.android.ondevicepersonalization.services
+com.android.sdksandbox
+com.google.android.videos
+com.google.android.play.games
+com.google.android.feedback
+com.google.android.tv.feedbackconsent
+com.google.android.partnersetup
+
+# Stock Google TV launcher (will be disabled once CleanYourTV launcher is active)
+com.google.android.apps.tv.launcherx
